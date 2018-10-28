@@ -38,7 +38,7 @@ desc_file.write(" Includes checking valid values for resource properties and bes
 desc_file.write(" [Learn more](https://github.com/awslabs/cfn-python-lint)")
 
 docs = list()
-pats = dict(name="CloudFormationLinter", patterns=list())
+pats = dict(name="cfn-lint", patterns=list())
 
 LEVEL_MAP = dict(W="Warning", E="Error", I="Info")
 
