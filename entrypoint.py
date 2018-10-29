@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import os
 import sys
 import glob
 import json
@@ -31,7 +32,7 @@ def parse_codacy_conf(filename, toolname="cfn-lint"):
     If the file is missing return two empty lists, otherwise,
     if the file exist and has files and/or patterns return those.
 
-    :param filename: name of the file to parse (typically /src/.codacy.json)
+    :param filename: name of the file to parse (typically /.codacyrc)
     :param toolname: name of the tool, used to get patterns from the codacy.json file
     :return        : list of files, list of patterns to check
     """
@@ -81,8 +82,12 @@ def run_cfnlint(basedir, path, patterns):
     :param patterns: patterns to check for
     :return        : List of results in Codacy format, or a Codacy error message if there is an error
     """
+
+    debug = True if (os.environ.get('DEBUG') and os.environ.get('DEBUG').lower().strip() == "true") else False
+    cmd = ["cfn-lint", "-d", "-f", "json", "%s/%s"%(basedir, path)] if debug else ["cfn-lint", "-f", "json", "%s/%s"%(basedir, path)]
+
     try:
-        process = subprocess.run(["cfn-lint", "-f", "json", "%s/%s"%(basedir, path)], capture_output=True)
+        process = subprocess.run(cmd, capture_output=True)
         hits = json.loads(process.stdout.decode('utf-8'))
         return [codacy_result(hit, path) for hit in hits if not patterns or hit["Rule"]["Id"] in patterns]
     except:
@@ -91,14 +96,17 @@ def run_cfnlint(basedir, path, patterns):
 
 if __name__ == "__main__":
 
-    basedir = "/src"
-    files, patterns = parse_codacy_conf("%s/.codacy.json"%basedir)
+    try:
+        basedir = "/src"
+        files, patterns = parse_codacy_conf("/.codacyrc")
 
-    # if .codacy.json has no files then check all
-    if not files:
-        files = get_all_files(basedir)
+        # if .codacyrc has no files then check all
+        if not files:
+            files = get_all_files(basedir)
 
-    for path in files:
-        if is_cfn("%s/%s"%(basedir, path)):
-            for hit in run_cfnlint(basedir, path, patterns):
-                print(json.dumps(hit))
+        for path in files:
+            if is_cfn("%s/%s"%(basedir, path)):
+                for hit in run_cfnlint(basedir, path, patterns):
+                    print(json.dumps(hit))
+    except:
+        sys.exit(1)
