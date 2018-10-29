@@ -7,6 +7,10 @@ import subprocess
 import cfnlint.decode.cfn_yaml as cfn_yaml
 
 def is_cfn(filename):
+    """Check if a file is a cloudformation template
+    :param filename: name of the file to check
+    :return        : True if it is, False otherwise
+    """
     try:
         cfn = cfn_yaml.load(filename)
         if 'Resources' in cfn:
@@ -22,6 +26,15 @@ def is_cfn(filename):
         return False
 
 def parse_codacy_conf(filename, toolname="cfn-lint"):
+    """Try to load codacy.json file
+
+    If the file is missing return two empty lists, otherwise,
+    if the file exist and has files and/or patterns return those.
+
+    :param filename: name of the file to parse (typically /src/.codacy.json)
+    :param toolname: name of the tool, used to get patterns from the codacy.json file
+    :return        : list of files, list of patterns to check
+    """
     try:
         with open(filename) as f:
             codacyrc = json.load(f)
@@ -41,15 +54,33 @@ def parse_codacy_conf(filename, toolname="cfn-lint"):
         return list(), list()
 
 def get_all_files(basedir):
+    """Get a list of all files in basedir, recursively
+    :param basedir: base of the path where to look for the files
+    :return       : a list with all the file paths
+    """
     return [name.replace("%s/"%basedir, "", 1) for name in glob.iglob('%s/**/*'%basedir, recursive=True)]
 
 def codacy_result(hit, path):
-  return dict(filename=path,
+    """Convert a hit to the Codacy result format
+    :param hit : a cfn-lint hit in json format
+    :param path: the path of the file where the hit occured
+    :return    : dictionary conforming to the Codacy format
+    """
+    return dict(filename=path,
               message=hit["Message"],
               patternId=hit["Rule"]["Id"],
               line=hit["Location"]["Start"]["LineNumber"])
 
 def run_cfnlint(basedir, path, patterns):
+    """Run cfn-lint on for a given file
+
+    Run cfn-lint for a file using a subprocess, and return the results (in codacy format) for this file.
+
+    :param basedir : base dir where the source files are located (e.g. /src)
+    :param path    : path of the file to check (without the basedir)
+    :param patterns: patterns to check for
+    :return        : List of results in Codacy format, or a Codacy error message if there is an error
+    """
     try:
         process = subprocess.run(["cfn-lint", "-f", "json", "%s/%s"%(basedir, path)], capture_output=True)
         hits = json.loads(process.stdout.decode('utf-8'))
@@ -59,9 +90,11 @@ def run_cfnlint(basedir, path, patterns):
 
 
 if __name__ == "__main__":
-    basedir = "./src"
+
+    basedir = "/src"
     files, patterns = parse_codacy_conf("%s/.codacy.json"%basedir)
 
+    # if .codacy.json has no files then check all
     if not files:
         files = get_all_files(basedir)
 
