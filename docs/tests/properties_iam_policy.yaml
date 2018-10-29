@@ -1,0 +1,47 @@
+##Patterns: E2507,E2507,E2507,E2507,E2507,E2507,E2507,E2522,E3003,E3002,E1025,E2507,E2507,E2507
+##Issue: {"severity": "Error", "line": 27, "patternId": "E2507"}
+##Issue: {"severity": "Error", "line": 28, "patternId": "E2507"}
+##Issue: {"severity": "Error", "line": 30, "patternId": "E2507"}
+##Issue: {"severity": "Error", "line": 35, "patternId": "E2507"}
+##Issue: {"severity": "Error", "line": 36, "patternId": "E2507"}
+##Issue: {"severity": "Error", "line": 36, "patternId": "E2507"}
+##Issue: {"severity": "Error", "line": 38, "patternId": "E2507"}
+##Issue: {"severity": "Error", "line": 42, "patternId": "E2522"}
+##Issue: {"severity": "Error", "line": 42, "patternId": "E3003"}
+##Issue: {"severity": "Error", "line": 43, "patternId": "E3002"}
+##Issue: {"severity": "Error", "line": 44, "patternId": "E1025"}
+##Issue: {"severity": "Error", "line": 46, "patternId": "E2507"}
+##Issue: {"severity": "Error", "line": 46, "patternId": "E2507"}
+##Issue: {"severity": "Error", "line": 46, "patternId": "E2507"}
+---
+AWSTemplateFormatVersion: "2010-09-09"
+Description: >
+  Test bad IAM policies
+Resources:
+  rIamRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument: {}
+      Policies:
+      - PolicyName: String
+        PolicyDocument:
+          Version: 'blah'
+          BadProperty: test
+          Statement: "Test"
+  rIamUser:
+    Type: AWS::IAM::ManagedPolicy
+    Properties:
+      PolicyDocument:
+        Version: 'blah'
+        Statement:
+        - Resource: '*'
+          Effect: 'NotAllow'
+          Principal: [123456789012]
+  rIamPolicy:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyDocument:
+      - Fn::If:
+        - cCondition
+        - Statement: {}
+        - Statement: []

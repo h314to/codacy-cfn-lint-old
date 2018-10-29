@@ -1,0 +1,216 @@
+##Patterns: E1001,W2001,E3001,E3001,E3012,E3002,E2502,E1012,E3002,E3002,E3002,E2502,E2522,E3003,E3002,E1012,E3002,E1012,E3012,E3003,E3012,E3003,E3003,E3003,E3003,E3003,E3012,E3012,E3012,E3012,E1010
+##Issue: {"severity": "Error", "line": 36, "patternId": "E1001"}
+##Issue: {"severity": "Warning", "line": 39, "patternId": "W2001"}
+##Issue: {"severity": "Error", "line": 48, "patternId": "E3001"}
+##Issue: {"severity": "Error", "line": 49, "patternId": "E3001"}
+##Issue: {"severity": "Error", "line": 58, "patternId": "E3012"}
+##Issue: {"severity": "Error", "line": 59, "patternId": "E3002"}
+##Issue: {"severity": "Error", "line": 60, "patternId": "E2502"}
+##Issue: {"severity": "Error", "line": 66, "patternId": "E1012"}
+##Issue: {"severity": "Error", "line": 69, "patternId": "E3002"}
+##Issue: {"severity": "Error", "line": 71, "patternId": "E3002"}
+##Issue: {"severity": "Error", "line": 73, "patternId": "E3002"}
+##Issue: {"severity": "Error", "line": 78, "patternId": "E2502"}
+##Issue: {"severity": "Error", "line": 81, "patternId": "E2522"}
+##Issue: {"severity": "Error", "line": 97, "patternId": "E3003"}
+##Issue: {"severity": "Error", "line": 100, "patternId": "E3002"}
+##Issue: {"severity": "Error", "line": 139, "patternId": "E1012"}
+##Issue: {"severity": "Error", "line": 143, "patternId": "E3002"}
+##Issue: {"severity": "Error", "line": 145, "patternId": "E1012"}
+##Issue: {"severity": "Error", "line": 152, "patternId": "E3012"}
+##Issue: {"severity": "Error", "line": 158, "patternId": "E3003"}
+##Issue: {"severity": "Error", "line": 159, "patternId": "E3012"}
+##Issue: {"severity": "Error", "line": 162, "patternId": "E3003"}
+##Issue: {"severity": "Error", "line": 162, "patternId": "E3003"}
+##Issue: {"severity": "Error", "line": 166, "patternId": "E3003"}
+##Issue: {"severity": "Error", "line": 166, "patternId": "E3003"}
+##Issue: {"severity": "Error", "line": 166, "patternId": "E3003"}
+##Issue: {"severity": "Error", "line": 175, "patternId": "E3012"}
+##Issue: {"severity": "Error", "line": 177, "patternId": "E3012"}
+##Issue: {"severity": "Error", "line": 198, "patternId": "E3012"}
+##Issue: {"severity": "Error", "line": 199, "patternId": "E3012"}
+##Issue: {"severity": "Error", "line": 216, "patternId": "E1010"}
+---
+AWSTemplateFormatVersion: "2010-09-09"
+Description: A sample template
+Errors:
+  Catch: Missing
+Parameters:
+  myParam:
+    Type: String
+    Default: String
+    Description: String
+Conditions:
+  IsProduction: !Equals ["Prod", "Prod"]
+Resources:
+  ## Missing Properties
+  MyEC2Instance1:
+    Type: "AWS::EC2::Instance1"
+  myIamProfile:
+    Type: "AWS::IAM::Role"
+  ## Fake Properties Key on main level
+  ## Bad sub properties in BlockDeviceMappings/Ebs and NetworkInterfaces
+  MyEC2Instance:
+    Type: "AWS::EC2::Instance"
+    Properties:
+      ImageId: "ami-2f726546"
+      InstanceType: t1.micro
+      KeyName: 1
+      FakeKey: MadeYouLook
+      IamInstanceProfile: !GetAtt RootInstanceProfile.Arn
+      BlockDeviceMappings:
+        -
+          DeviceName: /dev/sda
+          Ebs:
+            VolumeType: io1
+            Iops: !Ref pIops
+            DeleteOnTermination: false
+            VolumeSize: 20
+            BadSubX2Key: Not valid
+      NetworkInterfaces:
+        - DeviceIndex:
+          - "1"
+          BadKey: true
+  MyEC2Instance3:
+    Type: "AWS::EC2::Instance"
+    Properties:
+      ImageId: "ami-2f726546"
+      IamInstanceProfile: !Ref RootRole
+  myEc2Instance4:
+    Type: AWS::EC2::Instance
+    Properties: {}
+  ## Bad Policies property in PolicyDocument
+  RootRole:
+    Type: "AWS::IAM::Role"
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          -
+            Effect: "Allow"
+            Principal:
+              Service:
+                - "ec2.amazonaws.com"
+            Action:
+              - "sts:AssumeRole"
+      Path: "/"
+      Policies:
+        -
+          PolicyName: "root"
+          PolicyDocument1:
+            Version: "2012-10-17"
+            Statement:
+              -
+                Effect: "Allow"
+                Action: "*"
+                Resource: "*"
+  RolePolicies:
+    Type: "AWS::IAM::Policy"
+    Properties:
+      PolicyName: "root"
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          -
+            Effect: "Allow"
+            Action: "*"
+            Resource: "*"
+      Roles:
+        -
+          Ref: "RootRole"
+  RootInstanceProfile:
+    Type: "AWS::IAM::InstanceProfile"
+    Properties:
+      Path: "/"
+      Roles:
+        -
+          Ref: "RootRole"
+
+  # Bad Key under HealthCheck
+  ElasticLoadBalancer:
+    Type: AWS::ElasticLoadBalancing::LoadBalancer
+    Properties:
+      AvailabilityZones:
+        Fn::GetAZs: ''
+      Instances:
+      - Ref: MyEC2Instance
+      Listeners:
+      - LoadBalancerPort: '80'
+        InstancePort:
+          Ref: WebServerPort
+        Protocol: HTTP
+      HealthCheck:
+        FakeKey: Another fake key
+        Target:
+          Fn::Join:
+          - ''
+          - - 'HTTP:'
+            - Ref: WebServerPort
+            - "/"
+        HealthyThreshold: '3'
+        # Int which should be string. (No Error)
+        UnhealthyThreshold: 5
+        # Should be int (Error)
+        Interval: Test
+        Timeout: '5'
+  SecurityGroup:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      FromPort: Test
+  myAcl:
+    Type: AWS::WAFRegional::WebACL
+    Properties:
+      Name: myAcl
+  myLambdaTwo:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: index.handler
+  conditionLoadBalancer:
+    Type: AWS::ElasticLoadBalancing::LoadBalancer
+    Properties:
+      Tags:
+      - Fn::If:
+        - IsProduction
+        - Key: Production
+          Value: True
+        - Key: Production
+          Value: False
+      Fn::If:
+      - IsProduction
+      - AvailabilityZones:
+          Fn::GetAZs: ''
+        Listeners:
+        - Fn::If:
+          - IsProduction
+          - LoadBalancerPort: '443'
+            InstancePort: '443'
+            Protocol: HTTP
+          - LoadBalancerPort: '443'
+            InstancePort: '443'
+            Protocol: HTTP
+        HealthCheck:
+          Target: HTTP:80/
+          HealthyThreshold: '3'
+          UnhealthyThreshold: '5'
+          Interval: '30'
+          Timeout: '5'
+        ConnectionDrainingPolicy:
+          Enabled: 'true'
+          Timeout: '60'
+      - AvailabilityZones:
+          Fn::GetAZs: ''
+        Listeners:
+        - LoadBalancerPort: '80'
+          InstancePort: '80'
+          Protocol: HTTP
+        HealthCheck:
+          Target: HTTP:80/
+          HealthyThreshold: '3'
+          UnhealthyThreshold: '5'
+          Interval: '30'
+          Timeout: '5'
+Outputs:
+  myOutput:
+    Value: !GetAtt ElasticLoadBalancer.CanonicalHostedZoneName
+  myErrorOutput:
+    Value: !GetAtt ElasticLoadBalancer.DNE

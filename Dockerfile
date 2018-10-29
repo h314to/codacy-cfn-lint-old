@@ -8,6 +8,6 @@ ADD entrypoint.py /
 RUN adduser -u 2004 -D docker &&\
   pip install cfn-lint &&\
   rm -rvf /root/.cache &&\
-  chown docker:docker /docs entrypoint.py
+  chown -Rv docker:docker /docs entrypoint.py
 
 ENTRYPOINT ["/entrypoint.py"]
