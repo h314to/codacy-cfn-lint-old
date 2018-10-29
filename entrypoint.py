@@ -108,5 +108,6 @@ if __name__ == "__main__":
             if is_cfn("%s/%s"%(basedir, path)):
                 for hit in run_cfnlint(basedir, path, patterns):
                     print(json.dumps(hit))
-    except:
+    except Exception as e:
+        print("Unknown error in tool:\n%s"%str(e))
         sys.exit(1)
