@@ -1,0 +1,578 @@
+[
+    {
+        "description": "Check Base Resource Configuration",
+        "patternId": "E3001",
+        "timeToFix": 5,
+        "title": "Basic CloudFormation Resource Check"
+    },
+    {
+        "description": "Check Base Resource Configuration",
+        "patternId": "E3005",
+        "timeToFix": 5,
+        "title": "Check DependsOn values for Resources"
+    },
+    {
+        "description": "Check if maximum Resource limit is exceeded",
+        "patternId": "E3010",
+        "timeToFix": 5,
+        "title": "Resource limit not exceeded"
+    },
+    {
+        "description": "Check unneeded DepensOn Resource Configuration",
+        "patternId": "W3005",
+        "timeToFix": 5,
+        "title": "Check obsolete DependsOn configuration for Resources"
+    },
+    {
+        "description": "Check if maximum Resource name size limit is exceeded",
+        "patternId": "E3011",
+        "timeToFix": 5,
+        "title": "Resource name limit not exceeded"
+    },
+    {
+        "description": "Check if Resources have a circular dependency",
+        "patternId": "E3004",
+        "timeToFix": 5,
+        "title": "Resource dependencies are not circular"
+    },
+    {
+        "description": "Check if Resources are named correctly",
+        "patternId": "E3006",
+        "timeToFix": 5,
+        "title": "Resources have appropriate names"
+    },
+    {
+        "description": "Check if Lambda Function Memory Size",
+        "patternId": "E2531",
+        "timeToFix": 5,
+        "title": "Check Lambda Runtime Properties"
+    },
+    {
+        "description": "Check if Lambda Function Memory Size",
+        "patternId": "E2530",
+        "timeToFix": 5,
+        "title": "Check Lambda Memory Size Properties"
+    },
+    {
+        "description": "Check if CloudFront Aliases are valid domain names",
+        "patternId": "E3013",
+        "timeToFix": 5,
+        "title": "CloudFront Aliases"
+    },
+    {
+        "description": "Check if CodePipeline Stage Actions are set up properly.",
+        "patternId": "E2541",
+        "timeToFix": 5,
+        "title": "CodePipeline Stage Actions"
+    },
+    {
+        "description": "Check if CodePipeline Stages are set up properly.",
+        "patternId": "E2540",
+        "timeToFix": 5,
+        "title": "CodePipeline Stages"
+    },
+    {
+        "description": "Check if Elb Resource Properties",
+        "patternId": "E2503",
+        "timeToFix": 5,
+        "title": "Resource ELB Properties"
+    },
+    {
+        "description": "Check if IAM limits are not breached",
+        "patternId": "E2508",
+        "timeToFix": 5,
+        "title": "Check IAM resource limits"
+    },
+    {
+        "description": "Check if IAM Policy JSON is correct",
+        "patternId": "E2507",
+        "timeToFix": 5,
+        "title": "Check if IAM Policies are properly configured"
+    },
+    {
+        "description": "Check if IAM Policy Version is correct",
+        "patternId": "W2511",
+        "timeToFix": 5,
+        "title": "Check IAM Resource Policies syntax"
+    },
+    {
+        "description": "Check if IamInstanceProfile are used",
+        "patternId": "E2502",
+        "timeToFix": 5,
+        "title": "Check if IamInstanceProfile are using the name and not ARN"
+    },
+    {
+        "description": "Check if VPC Parameters are of correct type",
+        "patternId": "W2505",
+        "timeToFix": 5,
+        "title": "Check if VpcID Parameters have the correct type"
+    },
+    {
+        "description": "Check Properties Resource Configuration",
+        "patternId": "E2520",
+        "timeToFix": 5,
+        "title": "Check Properties that are mutually exclusive"
+    },
+    {
+        "description": "Check Availibility Zone parameter checks ",
+        "patternId": "W3010",
+        "timeToFix": 5,
+        "title": "Availability Zone Parameters should not be hardcoded"
+    },
+    {
+        "description": "Check if Resource PrimitiveTypes are correct",
+        "patternId": "E3012",
+        "timeToFix": 5,
+        "title": "Check resource properties values"
+    },
+    {
+        "description": "Check if Parameters are used",
+        "patternId": "W2506",
+        "timeToFix": 5,
+        "title": "Check if ImageId Parameters have the correct type"
+    },
+    {
+        "description": "Check Base Resource Configuration",
+        "patternId": "E3002",
+        "timeToFix": 5,
+        "title": "Resource properties are valid"
+    },
+    {
+        "description": "Check Required Resource Configuration",
+        "patternId": "E3003",
+        "timeToFix": 5,
+        "title": "Required Resource Parameters are missing"
+    },
+    {
+        "description": "Check Properties Resource Configuration",
+        "patternId": "E2521",
+        "timeToFix": 5,
+        "title": "Check Properties that are required together"
+    },
+    {
+        "description": "Check Base Resource Configuration",
+        "patternId": "W3002",
+        "timeToFix": 5,
+        "title": "Warn when properties are configured to only work with the package command"
+    },
+    {
+        "description": "Check Properties Resource Configuration",
+        "patternId": "E2522",
+        "timeToFix": 5,
+        "title": "Check Properties that need at least one of a list of properties"
+    },
+    {
+        "description": "Check Properties Resource Configuration",
+        "patternId": "E2523",
+        "timeToFix": 5,
+        "title": "Check Properties that need only one of a list of properties"
+    },
+    {
+        "description": "Check if Password Properties are properly configured",
+        "patternId": "W2501",
+        "timeToFix": 5,
+        "title": "Check if Password Properties are correctly configured"
+    },
+    {
+        "description": "Check Update Policy Configuration",
+        "patternId": "E3016",
+        "timeToFix": 5,
+        "title": "Check the configuration of a resources UpdatePolicy"
+    },
+    {
+        "description": "Check State Machine Definition",
+        "patternId": "E3021",
+        "timeToFix": 5,
+        "title": "Check Events Rule Targets are less than or equal to 5"
+    },
+    {
+        "description": "Check State Machine Definition",
+        "patternId": "E2532",
+        "timeToFix": 5,
+        "title": "Check State Machine Definition for proper syntax"
+    },
+    {
+        "description": "Check if EC2 VPC Resource Properties",
+        "patternId": "E2505",
+        "timeToFix": 5,
+        "title": "Resource EC2 VPC Properties"
+    },
+    {
+        "description": "Check if EC2 Subnet Resource Properties",
+        "patternId": "E2510",
+        "timeToFix": 5,
+        "title": "Resource EC2 PropertiesEc2Subnet Properties"
+    },
+    {
+        "description": "Check if EC2 Security Group Ingress Properties",
+        "patternId": "E2506",
+        "timeToFix": 5,
+        "title": "Resource EC2 Security Group Ingress Properties"
+    },
+    {
+        "description": "Check SecurityGroup Description Configuration",
+        "patternId": "E2509",
+        "timeToFix": 5,
+        "title": "Validate SecurityGroup description"
+    },
+    {
+        "description": "Check if Ec2 Ebs Resource Properties",
+        "patternId": "E2504",
+        "timeToFix": 5,
+        "title": "Check Ec2 Ebs Properties"
+    },
+    {
+        "description": "Check Route53 Recordset Configuration",
+        "patternId": "E3020",
+        "timeToFix": 5,
+        "title": "Validate Route53 RecordSets"
+    },
+    {
+        "description": "Check if Conditions are configured correctly",
+        "patternId": "E8001",
+        "timeToFix": 5,
+        "title": "Conditions have appropriate properties"
+    },
+    {
+        "description": "Check if Conditions are configured correctly",
+        "patternId": "W8001",
+        "timeToFix": 5,
+        "title": "Check if Conditions are Used"
+    },
+    {
+        "description": "Check Availability Zone parameter checks ",
+        "patternId": "E2004",
+        "timeToFix": 5,
+        "title": "CIDR Allowed Values should be a Cidr Range"
+    },
+    {
+        "description": "Check if EC2 Security Group Ingress Properties",
+        "patternId": "W2507",
+        "timeToFix": 5,
+        "title": "Security Group Parameters are of correct type AWS::EC2::SecurityGroup::Id"
+    },
+    {
+        "description": "Check if Parameters are configured correctly",
+        "patternId": "E2001",
+        "timeToFix": 5,
+        "title": "Parameters have appropriate properties"
+    },
+    {
+        "description": "Check Availibility Zone parameter checks ",
+        "patternId": "W2508",
+        "timeToFix": 5,
+        "title": "Availability Zone Parameters are of correct type AWS::EC2::AvailabilityZone::Name"
+    },
+    {
+        "description": "Check Lambda Runtime ",
+        "patternId": "W2512",
+        "timeToFix": 5,
+        "title": "Parameter Lambda Runtime has allowed values set"
+    },
+    {
+        "description": "Check if maximum Parameter value size limit is exceeded",
+        "patternId": "E2012",
+        "timeToFix": 5,
+        "title": "Parameter value limit not exceeded"
+    },
+    {
+        "description": "Check if Parameters are used",
+        "patternId": "W2001",
+        "timeToFix": 5,
+        "title": "Check if Parameters are Used"
+    },
+    {
+        "description": "Check if maximum Parameter limit is exceeded",
+        "patternId": "E2010",
+        "timeToFix": 5,
+        "title": "Parameter limit not exceeded"
+    },
+    {
+        "description": "Check Availability Zone parameter checks ",
+        "patternId": "W2509",
+        "timeToFix": 5,
+        "title": "CIDR Parameters have allowed values"
+    },
+    {
+        "description": "Check if Parameters are typed",
+        "patternId": "E2002",
+        "timeToFix": 5,
+        "title": "Parameters have appropriate type"
+    },
+    {
+        "description": "Check if Parameters are configured correctly",
+        "patternId": "E2015",
+        "timeToFix": 5,
+        "title": "Default value is within parameter constraints"
+    },
+    {
+        "description": "Check if maximum Parameter name size limit is exceeded",
+        "patternId": "E2011",
+        "timeToFix": 5,
+        "title": "Parameter name limit not exceeded"
+    },
+    {
+        "description": "Check if Parameters are named correctly",
+        "patternId": "E2003",
+        "timeToFix": 5,
+        "title": "Parameters have appropriate names"
+    },
+    {
+        "description": "Check Lambda Memory Size ",
+        "patternId": "W2510",
+        "timeToFix": 5,
+        "title": "Parameter Memory Size attributes should have max and min"
+    },
+    {
+        "description": "Check if Sub Parameters are used",
+        "patternId": "W1019",
+        "timeToFix": 5,
+        "title": "Sub validation of parameters"
+    },
+    {
+        "description": "Check if Base64 values are correct",
+        "patternId": "E1021",
+        "timeToFix": 5,
+        "title": "Base64 validation of parameters"
+    },
+    {
+        "description": "Check if GetAtt values are correct",
+        "patternId": "E1010",
+        "timeToFix": 5,
+        "title": "GetAtt validation of parameters"
+    },
+    {
+        "description": "Check if Cidr values are correct",
+        "patternId": "E1024",
+        "timeToFix": 5,
+        "title": "Cidr validation of parameters"
+    },
+    {
+        "description": "Check if FindInMap values are correct",
+        "patternId": "E1011",
+        "timeToFix": 5,
+        "title": "FindInMap validation of configuration"
+    },
+    {
+        "description": "Check if Condition exists",
+        "patternId": "E1025",
+        "timeToFix": 5,
+        "title": "Check if Conditions exist"
+    },
+    {
+        "description": "Check if Join values are correct",
+        "patternId": "E1022",
+        "timeToFix": 5,
+        "title": "Join validation of parameters"
+    },
+    {
+        "description": "Check if Not values are correct",
+        "patternId": "E1023",
+        "timeToFix": 5,
+        "title": "Validation NOT function configuration"
+    },
+    {
+        "description": "Check if Sub is using a variable",
+        "patternId": "W1020",
+        "timeToFix": 5,
+        "title": "Sub isn't needed if it doesn't have a variable defined"
+    },
+    {
+        "description": "Check if Dynamic Reference Secure Strings are only used in the correct locations",
+        "patternId": "E1027",
+        "timeToFix": 5,
+        "title": "Check dynamic references secure strings are in supported locations"
+    },
+    {
+        "description": "Check if Split values are correct",
+        "patternId": "E1018",
+        "timeToFix": 5,
+        "title": "Split validation of parameters"
+    },
+    {
+        "description": "Check if a substitution string exists without a substitution function",
+        "patternId": "E1029",
+        "timeToFix": 5,
+        "title": "Sub is required if a variable is used in a string"
+    },
+    {
+        "description": "Check if Ref value is a string",
+        "patternId": "E1020",
+        "timeToFix": 5,
+        "title": "Ref validation of value"
+    },
+    {
+        "description": "Check if Sub values are correct",
+        "patternId": "E1019",
+        "timeToFix": 5,
+        "title": "Sub validation of parameters"
+    },
+    {
+        "description": "Check if Parameters are used",
+        "patternId": "E1012",
+        "timeToFix": 5,
+        "title": "Check if Refs exist"
+    },
+    {
+        "description": "Check if Select values are correct",
+        "patternId": "E1017",
+        "timeToFix": 5,
+        "title": "Select validation of parameters"
+    },
+    {
+        "description": "Check if GetAz values are correct",
+        "patternId": "E1015",
+        "timeToFix": 5,
+        "title": "GetAz validation of parameters"
+    },
+    {
+        "description": "Check if Ref value is a string",
+        "patternId": "E1026",
+        "timeToFix": 5,
+        "title": "Cannot reference resources in the Conditions block of the template"
+    },
+    {
+        "description": "Check if ImportValue values are correct",
+        "patternId": "E1016",
+        "timeToFix": 5,
+        "title": "ImportValue validation of parameters"
+    },
+    {
+        "description": "Check if Condition exists",
+        "patternId": "E1028",
+        "timeToFix": 5,
+        "title": "Check Fn::If structure for validity"
+    },
+    {
+        "description": "Check Template Description is only a String",
+        "patternId": "E1004",
+        "timeToFix": 5,
+        "title": "Template description can only be a string"
+    },
+    {
+        "description": "Check Template Size",
+        "patternId": "E1002",
+        "timeToFix": 5,
+        "title": "Template size limit"
+    },
+    {
+        "description": "Check Template Description Size",
+        "patternId": "E1003",
+        "timeToFix": 5,
+        "title": "Template description limit"
+    },
+    {
+        "description": "Check Base Template Settings",
+        "patternId": "E1001",
+        "timeToFix": 5,
+        "title": "Basic CloudFormation Template Configuration"
+    },
+    {
+        "description": "Check if Mappings are configured correctly",
+        "patternId": "E7001",
+        "timeToFix": 5,
+        "title": "Mappings are appropriately configured"
+    },
+    {
+        "description": "Check if Mappings are used anywhere in the template",
+        "patternId": "W7001",
+        "timeToFix": 5,
+        "title": "Check if Mappings are Used"
+    },
+    {
+        "description": "Check if maximum Mapping limit is exceeded",
+        "patternId": "E7010",
+        "timeToFix": 5,
+        "title": "Mapping limit not exceeded"
+    },
+    {
+        "description": "Check if maximum Mapping attribute limit is exceeded",
+        "patternId": "E7012",
+        "timeToFix": 5,
+        "title": "Mapping attribute limit not exceeded"
+    },
+    {
+        "description": "Check if Mapping Keys are type string",
+        "patternId": "E7003",
+        "timeToFix": 5,
+        "title": "Mapping keys are strings and alphanumeric"
+    },
+    {
+        "description": "Check if maximum Mapping name size limit is exceeded",
+        "patternId": "E7011",
+        "timeToFix": 5,
+        "title": "Mapping name limit not exceeded"
+    },
+    {
+        "description": "Check if Mappings are named correctly",
+        "patternId": "E7002",
+        "timeToFix": 5,
+        "title": "Mappings have appropriate names"
+    },
+    {
+        "description": "Check if Outputs are configured correctly",
+        "patternId": "E6001",
+        "timeToFix": 5,
+        "title": "Outputs have appropriate properties"
+    },
+    {
+        "description": "Check if Outputs Descriptions are only string values",
+        "patternId": "E6005",
+        "timeToFix": 5,
+        "title": "Outputs descriptions can only be strings"
+    },
+    {
+        "description": "Check if maximum Output limit is exceeded",
+        "patternId": "E6010",
+        "timeToFix": 5,
+        "title": "Output limit not exceeded"
+    },
+    {
+        "description": "Check if Outputs have required properties",
+        "patternId": "E6002",
+        "timeToFix": 5,
+        "title": "Outputs have required properties"
+    },
+    {
+        "description": "Check if maximum Output name size limit is exceeded",
+        "patternId": "E6011",
+        "timeToFix": 5,
+        "title": "Output name limit not exceeded"
+    },
+    {
+        "description": "Check if Outputs have string values",
+        "patternId": "E6003",
+        "timeToFix": 5,
+        "title": "Outputs have values of strings"
+    },
+    {
+        "description": "Check if maximum Output description size limit is exceeded",
+        "patternId": "E6012",
+        "timeToFix": 5,
+        "title": "Output description limit not exceeded"
+    },
+    {
+        "description": "Check if Outputs are named correctly",
+        "patternId": "E6004",
+        "timeToFix": 5,
+        "title": "Outputs have appropriate names"
+    },
+    {
+        "description": "Check if a Output is done of another output",
+        "patternId": "W6001",
+        "timeToFix": 5,
+        "title": "Check Outputs using ImportValue"
+    },
+    {
+        "description": "Check if Metadata Interface parameters exist",
+        "patternId": "W4001",
+        "timeToFix": 5,
+        "title": "Metadata Interface parameters exist"
+    },
+    {
+        "description": "Check if Metadata Interface Configuration are configured correctly",
+        "patternId": "E4001",
+        "timeToFix": 5,
+        "title": "Metadata Interface have appropriate properties"
+    }
+]

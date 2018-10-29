@@ -1,0 +1,485 @@
+{
+    "name": "cfn-lint",
+    "patterns": [
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E3001"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E3005"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E3010"
+        },
+        {
+            "category": "CodeStyle",
+            "level": "Warning",
+            "patternId": "W3005"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E3011"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E3004"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E3006"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2531"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2530"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E3013"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2541"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2540"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2503"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2508"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2507"
+        },
+        {
+            "category": "CodeStyle",
+            "level": "Warning",
+            "patternId": "W2511"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2502"
+        },
+        {
+            "category": "CodeStyle",
+            "level": "Warning",
+            "patternId": "W2505"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2520"
+        },
+        {
+            "category": "CodeStyle",
+            "level": "Warning",
+            "patternId": "W3010"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E3012"
+        },
+        {
+            "category": "CodeStyle",
+            "level": "Warning",
+            "patternId": "W2506"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E3002"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E3003"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2521"
+        },
+        {
+            "category": "CodeStyle",
+            "level": "Warning",
+            "patternId": "W3002"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2522"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2523"
+        },
+        {
+            "category": "CodeStyle",
+            "level": "Warning",
+            "patternId": "W2501"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E3016"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E3021"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2532"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2505"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2510"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2506"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2509"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2504"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E3020"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E8001"
+        },
+        {
+            "category": "CodeStyle",
+            "level": "Warning",
+            "patternId": "W8001"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2004"
+        },
+        {
+            "category": "CodeStyle",
+            "level": "Warning",
+            "patternId": "W2507"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2001"
+        },
+        {
+            "category": "CodeStyle",
+            "level": "Warning",
+            "patternId": "W2508"
+        },
+        {
+            "category": "CodeStyle",
+            "level": "Warning",
+            "patternId": "W2512"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2012"
+        },
+        {
+            "category": "CodeStyle",
+            "level": "Warning",
+            "patternId": "W2001"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2010"
+        },
+        {
+            "category": "CodeStyle",
+            "level": "Warning",
+            "patternId": "W2509"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2002"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2015"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2011"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E2003"
+        },
+        {
+            "category": "CodeStyle",
+            "level": "Warning",
+            "patternId": "W2510"
+        },
+        {
+            "category": "CodeStyle",
+            "level": "Warning",
+            "patternId": "W1019"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E1021"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E1010"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E1024"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E1011"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E1025"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E1022"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E1023"
+        },
+        {
+            "category": "CodeStyle",
+            "level": "Warning",
+            "patternId": "W1020"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E1027"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E1018"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E1029"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E1020"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E1019"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E1012"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E1017"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E1015"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E1026"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E1016"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E1028"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E1004"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E1002"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E1003"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E1001"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E7001"
+        },
+        {
+            "category": "CodeStyle",
+            "level": "Warning",
+            "patternId": "W7001"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E7010"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E7012"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E7003"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E7011"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E7002"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E6001"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E6005"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E6010"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E6002"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E6011"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E6003"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E6012"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E6004"
+        },
+        {
+            "category": "CodeStyle",
+            "level": "Warning",
+            "patternId": "W6001"
+        },
+        {
+            "category": "CodeStyle",
+            "level": "Warning",
+            "patternId": "W4001"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E4001"
+        }
+    ]
+}
