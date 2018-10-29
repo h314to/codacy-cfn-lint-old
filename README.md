@@ -2,7 +2,7 @@
 
 This is the docker engine we use at Codacy to have [cfn-lint](https://github.com/awslabs/cfn-python-lint) support.
 You can also create a docker to integrate the tool and language of your choice!
-Check the **Docs** section for more information.
+See the [codacy-engine-scala-seed](https://github.com/codacy/codacy-engine-scala-seed) repository for more information.
 
 ## Usage
 
@@ -17,10 +17,6 @@ The docker is ran with the following command:
 ```
 docker run -it -v $srcDir:/src  <DOCKER_NAME>:<DOCKER_VERSION>
 ```
-
-## Docs
-
-For information on how to integrate a new tool with Codacy see the README.md file in the [codacy-engine-scala-seed](https://github.com/codacy/codacy-engine-scala-seed) repository.
 
 ## Test
 
