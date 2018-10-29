@@ -41,6 +41,7 @@ docs = list()
 pats = dict(name="cfn-lint", patterns=list())
 
 LEVEL_MAP = dict(W="Warning", E="Error", I="Info")
+CATEGORY_MAP = dict(W="CodeStyle", E="ErrorProne")
 
 for path in glob.iglob("%s/src/cfnlint/rules/**/*.py"%cfnlint_path, recursive=True):
 
@@ -51,7 +52,7 @@ for path in glob.iglob("%s/src/cfnlint/rules/**/*.py"%cfnlint_path, recursive=Tr
 
     pats['patterns'].append(dict(patternId=rule_class.id,
                                  level=LEVEL_MAP[rule_class.id[0]],
-                                 category="ErrorProne"))
+                                 category=CATEGORY_MAP[rule_class.id[0]]))
 
     docs.append(dict(patternId=rule_class.id,
                      title=rule_class.shortdesc,
