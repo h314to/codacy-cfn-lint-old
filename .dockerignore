@@ -1,4 +1,3 @@
-@utils/
 .git/
 .gitignore
 make_docs.py
