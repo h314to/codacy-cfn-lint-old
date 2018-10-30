@@ -87,7 +87,8 @@ def run_cfnlint(basedir, path, patterns):
     """
 
     debug = True if (os.environ.get('DEBUG') and os.environ.get('DEBUG').lower().strip() == "true") else False
-    cmd = ["cfn-lint", "-d", "-f", "json", "%s/%s"%(basedir, path)] if debug else ["cfn-lint", "-f", "json", "%s/%s"%(basedir, path)]
+    cmd = (["cfn-lint", "-d", "-f", "json", "%s/%s"%(basedir, path)] if debug
+            else ["cfn-lint", "-f", "json", "%s/%s"%(basedir, path)])
 
     try:
         process = subprocess.run(cmd, capture_output=True)
