@@ -1,4 +1,4 @@
-# Codacy Cloudformation Linter
+# Codacy CloudFormation Linter
 
 This is the docker engine we use at Codacy to have [cfn-lint](https://github.com/awslabs/cfn-python-lint) support.
 You can also create a docker to integrate the tool and language of your choice!
