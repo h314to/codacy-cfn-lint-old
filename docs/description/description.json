@@ -60,6 +60,12 @@
         "title": "CloudFront Aliases"
     },
     {
+        "description": "Check Dynamo DB Deletion Policy",
+        "patternId": "I3011",
+        "timeToFix": 5,
+        "title": "Check DynamoDB tables have a set DeletionPolicy"
+    },
+    {
         "description": "Check if CodePipeline Stage Actions are set up properly.",
         "patternId": "E2541",
         "timeToFix": 5,
@@ -202,6 +208,12 @@
         "patternId": "E2510",
         "timeToFix": 5,
         "title": "Resource EC2 PropertiesEc2Subnet Properties"
+    },
+    {
+        "description": "Check only one route table association defined per subnet",
+        "patternId": "E3022",
+        "timeToFix": 5,
+        "title": "Resource SubnetRouteTableAssociation Properties"
     },
     {
         "description": "Check if EC2 Security Group Ingress Properties",

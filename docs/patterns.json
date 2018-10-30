@@ -52,6 +52,11 @@
             "patternId": "E3013"
         },
         {
+            "category": "Documentation",
+            "level": "Info",
+            "patternId": "I3011"
+        },
+        {
             "category": "ErrorProne",
             "level": "Error",
             "patternId": "E2541"
@@ -170,6 +175,11 @@
             "category": "ErrorProne",
             "level": "Error",
             "patternId": "E2510"
+        },
+        {
+            "category": "ErrorProne",
+            "level": "Error",
+            "patternId": "E3022"
         },
         {
             "category": "ErrorProne",
