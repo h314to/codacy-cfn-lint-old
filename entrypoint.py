@@ -9,6 +9,7 @@ import cfnlint.decode.cfn_yaml as cfn_yaml
 
 def is_cfn(filename):
     """Check if a file is a cloudformation template
+
     :param filename: name of the file to check
     :return        : True if it is, False otherwise
     """
@@ -56,6 +57,7 @@ def parse_codacy_conf(filename, toolname="cfn-lint"):
 
 def get_all_files(basedir):
     """Get a list of all files in basedir, recursively
+
     :param basedir: base of the path where to look for the files
     :return       : a list with all the file paths
     """
@@ -63,6 +65,7 @@ def get_all_files(basedir):
 
 def codacy_result(hit, path):
     """Convert a hit to the Codacy result format
+
     :param hit : a cfn-lint hit in json format
     :param path: the path of the file where the hit occured
     :return    : dictionary conforming to the Codacy format
@@ -95,7 +98,6 @@ def run_cfnlint(basedir, path, patterns):
 
 
 if __name__ == "__main__":
-
     try:
         basedir = "/src"
         files, patterns = parse_codacy_conf("/.codacyrc")
